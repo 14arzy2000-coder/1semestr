@@ -1,0 +1,70 @@
+test.db
+
+insert into users (id, name, balance, created_at)
+
+values (2, 'ROBERT', 10, '2026-20-12'),
+
+(1, 'danii
+
+...
+
+09:28:13
+test.db
+
+insert into users (id, name, balance, created_at)
+
+values (2, 'ROBERT', 10, '2026-20-12'),
+
+(1, 'danii
+
+...
+
+09:28:11
+test.db.1
+
+SELECT * FROM users;
+
+09:27:33
+test.db
+
+insert into users (id, name, balance, created_at)
+
+values (2, 'ROBERT', 10, '2026-20-12'),
+
+(1, 'danii
+
+...
+
+09:27:01
+test.db
+
+SELECT * FROM users;
+
+09:25:27
+test.db
+
+insert into users (id, name, balance, created_at)
+
+values (1, 'daniil', 0, '2026-20-11');
+
+09:23:26
+test.db
+
+insert into users (id, name, balance, created_at)
+
+values (1, 'daniil', 0, '2026-20-11');
+
+09:23:18
+test.db
+
+CREATE TABLE users(
+
+  id INTEGER NOT NULL,
+
+  name VARCHAR(100),
+
+  balance DECIMAL(10, 2),
+
+  created_
+
+...
