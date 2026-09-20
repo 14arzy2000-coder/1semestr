@@ -1,0 +1,77 @@
+```python
+collection = []
+is_start = True
+
+
+def show_collection(task_collection):
+    print("=" * 30)
+    for i, j in enumerate(task_collection):
+        print(i + 1, j)
+    print("=" * 30)
+
+
+def show_menu():
+    print("1 - показать задачи | 2 - добавить задачу | 3 - редактировать | 4 - удалить | 0 - выход")
+
+
+while is_start:
+    show_menu()
+    choice_user = input("Введите ваш выбор: ")
+
+    match str(choice_user):
+
+        case "1":
+            show_collection(collection)
+            wait = input("Нажмите ENTER для продолжения")
+
+        case "2":
+            task_name = input("Введите имя задачи для добавления: ")
+
+            if task_name.strip() == "":
+                print("Название не может быть пустым")
+            else:
+                collection.append(task_name)
+                print("Задача успешно добавлена")
+
+        case "3":
+            show_collection(collection)
+            select_edit = input("Введите номер задачи: ")
+
+            if select_edit.isdigit():
+                select_edit = int(select_edit)
+
+                if 0 < select_edit <= len(collection):
+                    edit_name = input("Новое имя задачи: ")
+
+                    if edit_name.strip() == "":
+                        print("Название не может быть пустым")
+                    else:
+                        collection[select_edit - 1] = edit_name
+                        print(f"Задача '{select_edit}' успешно отредактирована")
+                else:
+                    print("Задачи с таким номером нет в списке")
+            else:
+                print("Введённые данные должны быть номером списка задач")
+
+        case "4":
+            show_collection(collection)
+            delete_edit = input("Введите номер задачи для удаления: ")
+
+            if delete_edit.isdigit():
+                delete_edit = int(delete_edit)
+
+                if 0 < delete_edit <= len(collection):
+                    collection.pop(delete_edit - 1)
+                    print(f"Задача '{delete_edit}' успешно удалена")
+                else:
+                    print("Задачи с таким номером нет в списке")
+            else:
+                print("Введённые данные должны быть номером списка задач")
+
+        case "0":
+            is_start = False
+            print("Выход")
+
+        case _:
+            print("Такого пункта нет")
+```
