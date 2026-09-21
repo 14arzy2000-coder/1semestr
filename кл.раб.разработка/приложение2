@@ -1,0 +1,81 @@
+is_start = True
+collection = [1]
+
+def show_collection(task_collection):
+    print("=" * 30)
+    for i, j in enumerate(task_collection):
+        print(i + 1, j)
+    print("=" * 30)
+
+
+def show_menu():
+    print("1 - показать задачи\n"
+          " 2 - добавить задачу\n"
+          " 3 - редактироватьn\n"
+          " 4 - удалить\n"
+          " 0 - выход")
+
+def check_confirm(select_task, task_list):
+    if select_task.isdigit():
+        if (int(select_task > 0 and select_task < len(task_list))):
+            return True
+        else:
+            return 2
+    else:
+        return 3
+
+def delete_task(task_collection):
+    select_edit = input("Введите номер задачи для удаления: ")
+    if check_confirm(select_edit, task_collection) == 1:
+        edit_name = input("новое имч задачи")
+        print(f"задача с номером {delete_task} успешно удалена")
+        task_collection.pop(int(delete_task) - 1)
+
+def edit_task(task_collection):
+    select_edit = input("Введите номер задачи: ")
+    if check_confirm(select_edit, task_collection) == 1:
+        edit_name = input("novoe ima")
+        task_collection[int(select_edit) - 1] = edit_name
+        print(f"<UNK> <UNK> <UNK> {edit_name} <UNK> <UNK> <UNK>")
+    elif check_confirm(delete_task, task_collection) == 2:
+        print(f"задача с номером {select_edit} нет в списке")
+    elif check_confirm(delete_task, task_collection) == 3:
+        print(f"введите именно номер задачи")
+
+
+while is_start:
+    show_menu()
+    choice_user = input("Введите ваш выбор: ")
+
+    match str(choice_user):
+
+        case "1":
+            show_collection(collection)
+            wait = input("Нажмите ENTER для продолжения")
+
+        case "2":
+            task_name = input("Введите имя задачи для добавления: ")
+
+            if task_name.startswith(' '):
+                if len(task_name) < 2 :
+                    print("Название не может быть пустым")
+                    continue
+                else:
+                    collection.append(f"zadacha {len(collection)}")
+                    print("Задача успешно добавлена")
+            else: collection.append(task_name)
+            print(f"zadaca {task_name} успешно добавлена")
+
+        case "3":
+            show_collection(collection)
+            edit_task(collection)
+
+        case "4":
+            show_collection(collection)
+            delete_task(collection)
+        case "0":
+            is_start = False
+            print("Выход")
+
+        case _:
+            print("Такого пункта нет")
