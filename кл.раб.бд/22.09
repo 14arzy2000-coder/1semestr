@@ -41,3 +41,10 @@ CREATE TABLE coments (
     FOREIGN key (videos_id) REFERENCES videos(id),
     FOREIGN key (user_id) REFERENCES user(id)
 );
+
+CREATE TABLE categories (
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    name varchar(100) not null UNIQUE,
+    videos_id integer,
+    FOREIGN key (videos_id) REFERENCES videos(id)
+);
