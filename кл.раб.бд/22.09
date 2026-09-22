@@ -58,3 +58,12 @@ CREATE TABLE playlist (
   user_id integer,
   FOREIGN key (user_id) REFERENCES user(id)
 );
+
+CREATE TABLE deportament (
+   id INTEGER PRIMARY KEY AUTOINCREMENT 
+);
+
+CREATE TABLE moderators (
+ id INTEGER PRIMARY KEY AUTOINCREMENT,
+ FOREIGN key (videos_id) REFERENCES videos(id));
+ 
