@@ -1,0 +1,28 @@
+import json
+import os
+import platform
+import psutil
+
+def main():
+    data = search_data()
+    save_data(data)
+
+def search_data():
+    comp_name = str(os.getpid()) + str(platform.node())
+    logic_count = psutil.cpu_count()
+    used_memory = psutil.virtual_memory().used
+
+    data = {
+        "имя компьютера" : comp_name,
+        "лог проц" : logic_count,
+        "исп памяти" : used_memory
+    }
+    return data
+
+def save_data(data:dict):
+    name = "data.json"
+    with open(name, "w", encoding="utf-8") as file:
+        json.dump(data, file, ensure_ascii=False)
+
+
+main()
