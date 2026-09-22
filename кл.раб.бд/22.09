@@ -69,5 +69,8 @@ CREATE TABLE deportament (
 
 CREATE TABLE moderators (
  id INTEGER PRIMARY KEY AUTOINCREMENT,
- FOREIGN key (videos_id) REFERENCES videos(id));
+  video_id integer,
+ FOREIGN key (video_id) REFERENCES video(id)
+);
+ 
  
