@@ -2,6 +2,10 @@ CREATE TABLE user_videos(
 		id INTEGER PRIMARY KEY AUTOINCREMENT
 );
 
+CREATE TABLE user (
+  id INTEGER PRIMARY KEY AUTOINCREMENT
+  );
+
 CREATE TABLE users(
 	id INTEGER PRIMARY KEY AUTOINCREMENT, 
   	user_videos_id INTEGER,
@@ -47,4 +51,10 @@ CREATE TABLE categories (
     name varchar(100) not null UNIQUE,
     videos_id integer,
     FOREIGN key (videos_id) REFERENCES videos(id)
+);
+
+CREATE TABLE playlist (
+  id INTEGER PRIMARY KEY AUTOINCREMENT, 
+  user_id integer,
+  FOREIGN key (user_id) REFERENCES user(id)
 );
