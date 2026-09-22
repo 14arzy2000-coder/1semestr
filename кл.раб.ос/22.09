@@ -28,7 +28,7 @@ def save_data(data:dict):
 main()
 
 
-
+print(str(psutil.virtual_memory().available / 1024 / 1024 / 1024)[:4] + "gb")
 data = {
         "имя компьютера" : comp_name,
         "общая память" : logic_count,
