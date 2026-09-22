@@ -1,3 +1,5 @@
+https://app.diagrams.net/
+
 test.db
 
 insert into users (id, name, balance, created_at)
