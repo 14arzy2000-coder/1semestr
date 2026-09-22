@@ -73,4 +73,12 @@ CREATE TABLE moderators (
  FOREIGN key (video_id) REFERENCES video(id)
 );
  
+ CREATE TABLE user_notification(
+	user_id INTEGER PRIMARY KEY AUTOINCREMENT, 
+  FOREIGN KEY  (user_id) REFERENCES user(id)
+    );
  
+ CREATE TABLE user_subscribe(
+	user_id INTEGER PRIMARY KEY AUTOINCREMENT, 
+  FOREIGN KEY  (user_id) REFERENCES user(id)
+    );
