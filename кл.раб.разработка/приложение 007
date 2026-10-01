@@ -1,5 +1,3 @@
-from random import choice
-import processes
 import os
 
 collection = []  # list of tasks
@@ -51,17 +49,12 @@ def edit_task(task_collection):
 
 
 def add_task(task_collection):
-    task_name = input("Введите имя задачи для добавления: ")
-    if task_name.startswith(" "):
-        if len(task_name) < 2:
-            print("Название не может быть пустым")
-        else:
-            task_collection.append(f"Задача {len(task_collection) + 1}" )
-    else:
-        task_collection.append(task_name)
-        print(f"Задача {task_name} успешно добавлена!")
-
-
+    task_name = input("Введите имя задачи для добавления: ").strip()
+    if not task_name:
+        print("Название не может быть пустым")
+        return
+    task_collection.append(task_name)
+    print(f"Задача {task_name} успешно добавлена!")
 
 
 def main():
