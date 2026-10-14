@@ -1,0 +1,31 @@
+ubuntu@nim:~$ sudo nano /etc/nim
+[sudo] password for ubuntu:
+ubuntu@nim:~$ sudo nano /etc/hostname nim
+ubuntu@nim:~$ sudo nano /etc/hostname
+ubuntu@nim:~$ sudo nano /etc/hostname
+ubuntu@nim:~$ sudo chattr +i /etc/hostname
+ubuntu@nim:~$ lsattr /etc/hostname
+----i---------e------- /etc/hostname
+ubuntu@nim:~$ lsattr /etc/hostname /etc/hosts
+----i---------e------- /etc/hostname
+--------------e------- /etc/hosts
+ubuntu@nim:~$ sudo chattr +i /etc/hosts
+ubuntu@nim:~$ lsattr /etc/hostname /etc/hosts
+----i---------e------- /etc/hostname
+----i---------e------- /etc/hosts
+ubuntu@nim:~$ ls -1
+os.py
+practice
+ubuntu@nim:~$
+ubuntu@nim:~$
+ubuntu@nim:~$
+ubuntu@nim:~$ ls -l /etc/hostname /etc/hosts
+-rw-r--r-- 1 root root   4 Oct 14 12:18 /etc/hostname
+-rw-r--r-- 1 root root 403 Oct 14 12:18 /etc/hosts
+ubuntu@nim:~$ sudo systemctl mask systemd-hostnsmed
+Created symlink /etc/systemd/system/systemd-hostnsmed.service → /dev/null.
+ubuntu@nim:~$ systemctl status systemd-hostnsmed
+System has not been booted with systemd as init system (PID 1). Can't operate.
+Failed to connect to bus: Host is down
+ubuntu@nim:~$ sudo nano /etc/wsl.conf
+ubuntu@nim:~$
