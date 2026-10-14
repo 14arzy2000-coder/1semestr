@@ -32,3 +32,5 @@ ubuntu@nim:~$
 
 
 wsl --shutdown
+sudo echo "test-name" > /etc/hostname
+bash: /etc/hostname: Permission denied
